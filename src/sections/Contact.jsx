@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-
   const [isSending, setIsSending] = useState("");
 
   // YOUR W3FORMS ACCESS KEY HERE
-  const accessKey = ""
+  const accessKey = "";
 
   // Hande form submission
   const onSubmit = async (event) => {

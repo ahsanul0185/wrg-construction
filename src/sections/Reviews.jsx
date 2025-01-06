@@ -45,16 +45,17 @@ const Reviews = () => {
       </p>
 
       {/* Reviews */}
-      <div className="mt-10 md:mt-20 flex flex-col md:flex-row justify-center items-center gap-5">
+      <div className="mt-10 md:mt-20 flex flex-col md:flex-row flex-wrap justify-center items-center gap-5">
         {reviews.length <= 3 ? (
           reviews.map((review, idx) => (
-            <ReviewCard
-              key={review.id}
+            <div key={review.id}>
+              <ReviewCard
               profile_url={review.profile_photo}
               name={review.name}
               location={review.location}
               text={review.text}
             />
+            </div>
           ))
         ) : (
           <Slider reviews={reviews} />
