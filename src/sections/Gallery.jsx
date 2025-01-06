@@ -2,22 +2,22 @@ import React from "react";
 
 const galleryImages = [
   {
-    url: "/images/image_1.avif",
+    url: "/images/image_1.jpg",
   },
   {
-    url: "/images/image_2.avif",
+    url: "/images/image_2.jpg",
   },
   {
-    url: "/images/image_2.avif",
+    url: "/images/image_2.jpg",
   },
   {
-    url: "/images/image_2.avif",
+    url: "/images/image_2.jpg",
   },
   {
-    url: "/images/image_2.avif",
+    url: "/images/image_2.jpg",
   },
   {
-    url: "/images/image_1.avif",
+    url: "/images/image_1.jpg",
   },
 ];
 

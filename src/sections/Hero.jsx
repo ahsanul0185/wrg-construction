@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImage from "/images/hero_img.avif";
+import heroImage from "/images/hero_img.jpg";
 import usePageScroll from "../helpers/usePageScroll";
 
 const Hero = () => {

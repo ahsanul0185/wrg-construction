@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
 import React from "react";
+import img_fast from '/images/fast.jpg'
+import img_perfectly from '/images/perfectly_crafted.jpg'
 
 const FastAndCrafted = () => {
   return (
@@ -15,7 +17,7 @@ const FastAndCrafted = () => {
         >
           <img
             className="md:max-w-[50%] xl:max-w-[475px] aspect-[4/3] object-cover rounded-3xl"
-            src="/images/fast.avif"
+            src={ img_fast}
             alt="fast"
           />
 
@@ -51,7 +53,7 @@ const FastAndCrafted = () => {
 
           <img
             className="md:max-w-[50%] xl:max-w-[475px] aspect-[4/3] object-cover rounded-3xl order-1 md:order-2"
-            src="/images/perfectly_crafted.avif"
+            src={ img_perfectly }
             alt="fast"
           />
         </motion.div>

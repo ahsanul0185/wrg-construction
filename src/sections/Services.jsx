@@ -6,19 +6,19 @@ const services = [
     id: 1,
     name: "Renovations",
     details: "Upgrade and modernize your space with expert renovations.",
-    imgURL: "/images/service_1.avif",
+    imgURL: "/images/service_1.jpg",
   },
   {
     id: 2,
     name: "Construction",
     details: "Build sturdy, stylish structures with our trusted expertise.",
-    imgURL: "/images/service_2.avif",
+    imgURL: "/images/service_2.jpg",
   },
   {
     id: 3,
     name: "Outdoor Living",
     details: "Enhance your outdoors with elegant pools and patios.",
-    imgURL: "/images/service_3.avif",
+    imgURL: "/images/service_3.jpg",
   },
 ];
 
