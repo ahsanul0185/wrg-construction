@@ -5,7 +5,7 @@ const Contact = () => {
   const [isSending, setIsSending] = useState("");
 
   // YOUR W3FORMS ACCESS KEY HERE
-  const accessKey = "68d96686-7572-4e9e-9fcd-1acd628e0881"
+  const accessKey = ""
 
   // Hande form submission
   const onSubmit = async (event) => {
