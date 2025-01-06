@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = { name, email, message };
-    console.log(formData);
+  const [isSending, setIsSending] = useState("");
+
+  // YOUR W3FORMS ACCESS KEY HERE
+  const accessKey = "68d96686-7572-4e9e-9fcd-1acd628e0881"
+
+  // Hande form submission
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setIsSending("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", accessKey);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setIsSending("");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+    }
   };
 
   return (
@@ -33,20 +52,20 @@ const Contact = () => {
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-10">
           Contact
         </h2>
-        <form onSubmit={handleSubmit} className="w-full  mx-auto">
+        <form onSubmit={onSubmit} className="w-full  mx-auto">
           <div className="flex gap-3">
             <input
               type="text"
               className="outline-none bg-[#f2f2f2] rounded-md p-3 w-full"
               placeholder="Name"
-              onChange={(e) => setName(e.target.value)}
+              name="name"
               required
             />
             <input
               type="email"
               className="outline-none bg-[#f2f2f2] rounded-md p-3 w-full"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
               required
             />
           </div>
@@ -54,6 +73,7 @@ const Contact = () => {
           <textarea
             className="outline-none bg-[#f2f2f2] rounded-md p-3 w-full mt-3 h-44 resize-none"
             placeholder="Message"
+            name="message"
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
@@ -62,7 +82,7 @@ const Contact = () => {
             type="submit"
             className="w-full py-3 px-2 text-white font-bold rounded-md bg-dark mt-3 hover:bg-dark/85 duration-500"
           >
-            Send
+            {!isSending ? "Send" : "Sending"}
           </button>
         </form>
       </div>
